@@ -1,0 +1,14 @@
+---
+- name: Zabbix Repository
+  yum_repository:
+    name: zabbix
+    file: zabbix
+    description: "Zabbix {{ repo_zabbix_release }} Packages for EL$releasever"
+    baseurl: "http://repo.zabbix.com/zabbix/{{ repo_zabbix_release }}/rhel/$releasever/$basearch/"
+    failovermethod: priority
+    gpgcheck: yes
+    gpgkey: "{{ repo_zabbix_key.url }}"
+    enabled: yes
+    params: "{{ repo_zabbix | default({}) }}"
+  become: yes
+

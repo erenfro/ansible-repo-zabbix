@@ -1,0 +1,15 @@
+---
+- name: Install APT GPG Key
+  apt_key:
+    url: "{{ repo_zabbix_key.url }}"
+    id: "{{ repo_zabbix_key.id }}"
+    state: "{{ repo_zabbix_key.state }}"
+  become: yes
+
+- name: Install APT Repository
+  apt_repository:
+    repo: 'deb {{ repo_zabbix.url }} {{ ansible_distribution_release }} {{ repo_zabbix.repos | join(" ") }}'
+    filename: "{{ repo_zabbix.file }}"
+    state: "{{ repo_zabbix.state }}"
+  become: yes
+

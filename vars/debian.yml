@@ -1,0 +1,16 @@
+repo_zabbix_release: 3.0
+
+repo_zabbix_key:
+  url: http://repo.zabbix.com/zabbix-official-repo.key
+  id: 082AB56BA14FE591
+  state: present
+
+repo_zabbix:
+  url: http://repo.zabbix.com/zabbix/{{ repo_zabbix_release }}/{{ ansible_distribution | lower }}
+  file: zabbix
+  repos:
+    - main
+    - contrib
+    - non-free
+  state: present
+

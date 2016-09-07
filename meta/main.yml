@@ -1,0 +1,28 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Eric Renfro
+  description: Repository for Zabbix for EL and Debian based distros, overridable.
+  company: "Linux-Help.org"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.1.0
+  platforms:
+    - name: EL
+      versions:
+      - 5
+      - 6
+      - 7
+    - name: Debian
+      versions:
+        - jessie
+        - wheezy
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+  categories:
+    - system
+  galaxy_tags:
+    - repository
+
